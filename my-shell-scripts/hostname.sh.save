@@ -1,0 +1,4 @@
+#!/bin/bash
+
+VARIAVEL2=$(l
+echo "Este script está rodando no computador: $VARIAVEL2"

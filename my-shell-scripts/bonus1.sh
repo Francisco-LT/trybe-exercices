@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Eu sou tryber e empolgado
+
 #primeiramente declaramos a variável WORDS, que irá equivaler à nossa lista;
 
 #em seguida utiliza-se o for,  que vai criar um looping, pegando cada valor da nossa lista (WORDS) e executar o comando em em cada um desses valores

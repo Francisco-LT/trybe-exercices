@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Eu sou tryber e empolgado
+#Vou ter muito sucesso na programação!!
 
 #primeiramente declaramos a variável WORDS, que irá equivaler à nossa lista;
 

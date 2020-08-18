@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Vou ter muito suceso na programação
+#Vou ter muito sucesso na programação!!
 
 #primeiramente declaramos a variável WORDS, que irá equivaler à nossa lista;
 

@@ -7,5 +7,5 @@ let info = {
   console.log("Bem-vinda, " + info.personagem);
   console.log(info);
   for (let chave in info) {
-      console.log(chave);
+      console.log(info[chave]);
   }

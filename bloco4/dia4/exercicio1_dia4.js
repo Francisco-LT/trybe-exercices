@@ -10,9 +10,15 @@ let info = {
     nota: "O último MacPatinhas",
     recorrente: "Sim"
   };
-  console.log(info.personagem + " e " + info2.personagem);
-  console.log(info.origem + " e " + info2.origem );
-  console.log(info.nota + " e " + info2.nota);
-if (info.recorrente == info2.recorrente) {
-    console.log("Ambos recorrentes // Atenção para essa última linha!")
-} 
+// nesse for/in inicialmente ele analiza o primeiro info[proprieties] que no caso seria "Margarida", como não cabe no primeir if, ele vai até o else, e assim por diante...
+  for (let properties in info) {
+      if (
+          info[properties] == info.recorrente &&
+          info[properties] == "Sim" &&
+          info2[properties] == "Sim"
+      ) {
+    console.log("Ambos recorrentes")
+} else {
+    console.log(info[properties] + " e " + info2[properties]);
+}
+}

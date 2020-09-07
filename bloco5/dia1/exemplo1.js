@@ -1,5 +1,5 @@
-document.getElementById("page-title").innerText = "Pulp Fiction";
-document.getElementById("subtitle").innerText = "Time do coração";
-document.getElementById("second-paragraph").innerText = "Galo doido";
-document.getElementsByClassName("paragrafo")[0].style.color = "yellow";
-document.getElementsByTagName("h4")[0].innerText = "Time!!";
+document.querySelector("#page-title").innerText = "Pulp Fiction";
+document.querySelector("#subtitle").innerText = "Time do coração";
+document.querySelector("#second-paragraph").innerText = "Galo doido";
+document.querySelector(".paragrafo").style.color = "yellow";
+document.querySelector("h4").innerText = "Time!!";

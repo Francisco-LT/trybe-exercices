@@ -68,6 +68,26 @@
        corBranca.style.background = "white";
        }
        corDoFundoBranca();
+
+       function tagH1() {
+           let correcaoTag = document.getElementsByTagName("h1")[0];
+           correcaoTag.innerText = "Exercício 5.1 - JavaEscripit";
+       }
+       tagH1 ();
+
+       function tagP() {
+           let correcaoTagP = document.getElementsByTagName("p")[0];
+           correcaoTagP.innerText = correcaoTagP.innerText.toUpperCase();
+       }
+       tagP ();
+
+       function exibicaoTagP() {
+           let tagPConsole = document.getElementsByTagName("p");
+           for (let i = 0; i < tagPConsole.length; i += 1) {
+           console.log(tagPConsole[i].innerText);
+       }
+    }
+    exibicaoTagP ();
     </script>
   </body>
 </html>

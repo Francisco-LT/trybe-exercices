@@ -6,3 +6,5 @@ document.getElementById("elementoOndeVoceEsta").previousElementSibling;
 document.getElementById("elementoOndeVoceEsta").nextSibling;
 document.getElementById("elementoOndeVoceEsta").nextElementSibling;
 document.querySelector("#pai").nextElementSibling
+let elementoOndeVoceEsta = document.createElement("div");
+elementoOndeVoceEsta.innerText = "sdfdsfsdgdsg";

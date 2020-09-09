@@ -57,17 +57,53 @@
   </head>
   <body>
     <script>
-        let elementH1 = document.createElement("h1");
-        elementH1.innerText = "Exercício 5.2 - JavaScript DOM";
-        document.body.appendChild(elementH1);
+   let elementH1 = document.createElement("h1");
+elementH1.innerText = "Exercício 5.2 - JavaScript DOM";
+document.body.appendChild(elementH1);
 
-        let elementDiv1 = document.createElement("div");
-        elementDiv1.className = "main-content";
-        document.body.appendChild(elementDiv1);
+let elementDiv1 = document.createElement("div");
+elementDiv1.className = "main-content";
+document.body.appendChild(elementDiv1);
 
-        let elementDiv2 = document.createElement("div");
-        elementDiv2.className = "center-content";
-        elementDiv1.appendChild(elementDiv2);
+let elementDiv2 = document.createElement("div");
+elementDiv2.className = "center-content";
+elementDiv1.appendChild(elementDiv2);
+
+let elementP1 = document.createElement("p");
+elementP1.innerText = "Colocando o parágrafo dentro da div";
+elementDiv2.appendChild(elementP1);
+
+let elementDiv3 = document.createElement("div");
+elementDiv3.className = "left-content";
+elementDiv1.appendChild(elementDiv3);
+
+let elementDiv4 = document.createElement("div");
+elementDiv4.className = "rigth-content";
+elementDiv1.appendChild(elementDiv4);
+
+let elementImage1 = document.createElement("img");
+elementImage1.src = "https://picsum.photos/200"
+elementImage1.className = "small-image";
+elementDiv3.appendChild(elementImage1);
+
+let elementList1 = document.createElement("ul");
+elementDiv4.appendChild(elementList1);
+let array1 = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+for (let i = 0; i < array1.length; i += 1) {
+  let elementList2 = document.createElement("li");
+  elementList2.innerText = array1[i];
+  elementList1.appendChild(elementList2);
+}
+
+for (let i = 1; i <= 3; i += 1) { 
+    let elementTagH3 = document.createElement("h3");
+    elementTagH3.innerHTML = i + " Tag H3";
+    elementDiv1.appendChild(elementTagH3);
+    }
+
+    let title = document.getElementsByTagName("h1")[0];
+    title.className = "title";
+
     </script>
   </body>
 </html>

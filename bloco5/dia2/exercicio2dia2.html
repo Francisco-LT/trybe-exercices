@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+   let elementH1 = document.createElement("h1");
+elementH1.innerText = "Exercício 5.2 - JavaScript DOM";
+document.body.appendChild(elementH1);
+
+let elementDiv1 = document.createElement("div");
+elementDiv1.className = "main-content";
+document.body.appendChild(elementDiv1);
+
+let elementDiv2 = document.createElement("div");
+elementDiv2.className = "center-content";
+elementDiv1.appendChild(elementDiv2);
+
+let elementP1 = document.createElement("p");
+elementP1.innerText = "Colocando o parágrafo dentro da div";
+elementDiv2.appendChild(elementP1);
+
+let elementDiv3 = document.createElement("div");
+elementDiv3.className = "left-content";
+elementDiv1.appendChild(elementDiv3);
+
+let elementDiv4 = document.createElement("div");
+elementDiv4.className = "rigth-content";
+elementDiv1.appendChild(elementDiv4);
+
+let elementImage1 = document.createElement("img");
+elementImage1.src = "https://picsum.photos/200"
+elementImage1.className = "small-image";
+elementDiv3.appendChild(elementImage1);
+
+let elementList1 = document.createElement("ul");
+elementDiv4.appendChild(elementList1);
+let array1 = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+for (let i = 0; i < array1.length; i += 1) {
+  let elementList2 = document.createElement("li");
+  elementList2.innerText = array1[i];
+  elementList1.appendChild(elementList2);
+}
+
+for (let i = 1; i <= 3; i += 1) { 
+    let elementTagH3 = document.createElement("h3");
+    elementTagH3.innerHTML = i + " Tag H3";
+    elementDiv1.appendChild(elementTagH3);
+    }
+
+    let title = document.getElementsByTagName("h1")[0];
+    title.className = "title";
+
+    let descricao = document.getElementsByTagName("h3");
+    for (let i = 0; i <= 2; i += 1) {
+      descricao[i].className = "description";
+    }
+
+    let apagar = document.getElementsByClassName("left-content")[0];
+    elementDiv1.removeChild(apagar);
+
+    let centralizacao = document.getElementsByClassName("right-content")[0];
+    centralizacao.style.marginRight = "auto";
+
+    const divCenterContent = document.getElementsByClassName('center-content')[0];
+    divCenterContent.parentNode.style.backgroundColor = 'green';
+
+    </script>
+  </body>
+</html>

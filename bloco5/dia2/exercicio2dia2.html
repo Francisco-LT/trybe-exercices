@@ -104,6 +104,20 @@ for (let i = 1; i <= 3; i += 1) {
     let title = document.getElementsByTagName("h1")[0];
     title.className = "title";
 
+    let descricao = document.getElementsByTagName("h3");
+    for (let i = 0; i <= 2; i += 1) {
+      descricao[i].className = "description";
+    }
+
+    let apagar = document.getElementsByClassName("left-content")[0];
+    elementDiv1.removeChild(apagar);
+
+    let centralizacao = document.getElementsByClassName("right-content")[0];
+    centralizacao.style.marginRight = "auto";
+
+    const divCenterContent = document.getElementsByClassName('center-content')[0];
+    divCenterContent.parentNode.style.backgroundColor = 'green';
+
     </script>
   </body>
 </html>

@@ -45,10 +45,16 @@
         exibir um alerta contendo a mensagem "Desconto de R$(resultado)", sendo
         <strong>discount</strong> o resultado da multiplicação.
       </p>
+      <button type="button" class="tarefa2">BOTÃO2</button>
       <script language="javascript" type="text/javascript">
-        //JavaScript para a tarefa 2
-        //JavaScript para a tarefa 2
-        //JavaScript para a tarefa 2
+      let productPrice = 59.99;
+      let discount = 0.30;
+      let resultado = productPrice * discount;
+      let botao3 = document.getElementsByClassName("tarefa2")[0];
+      botao3.addEventListener("click", function () { 
+        alert("Desonto de R$ " + resultado.toFixed(2) + "!!")
+        })
+      
       </script>
       <hr />
       <h2>Bônus</h2>
@@ -65,7 +71,20 @@
         Além disso, sempre que um dos eventos for realizado deve-se logar no
         console qual dos eventos acabou de ocorrer.
       </p>
-      <!-- Adicione a tag <img /> aqui -->
+      <img class="imagem1" src="https://cdn.pixabay.com/photo/2015/11/17/13/13/dogue-de-bordeaux-1047521_960_720.jpg">
+      <script language="javascript" type="text/javascript">
+      let imagem2 = document.querySelector(".imagem1");
+      imagem2.addEventListener("mouseover", function (evento) {
+        imagem2 .src =
+            "https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_960_720.jpg";
+          console.log("O evento foi:", evento.type);
+      })
+      imagem2.addEventListener("mouseleave", function (evento) {
+          imagem2.src =
+            "https://cdn.pixabay.com/photo/2015/11/17/13/13/dogue-de-bordeaux-1047521_960_720.jpg";
+          console.log("O evento foi:", evento.type);
+        });
+      </script>
     </div>
   </body>
 </html>

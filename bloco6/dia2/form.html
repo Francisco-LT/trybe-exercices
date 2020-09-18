@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
+    <link rel="stylesheet" href="/bulma.min.css">
+    <link rel="stylesheet" href="style.css"  
+</head>
+<body>
+    <section class="section">
+    <header>
+        <h1 class="title">Curículo online</h1>
+        <h5 class="subtitle"><em>Registraremos nesse site todas as suas habilidades e experiências</em></h5>
+    </header>
+    </section>
+    <section class="section">
+    <form action="" method="GET">
+        <div class="field">
+        <label for = "nome" class="label">Nome completo:</label>
+        <div class="control">
+        <input class="input" type="text" id="nome" required="required" maxlength="40">
+    </div>
+    </div>
+    <div class="field">
+        <label for = "email" class="label">Email:</label>
+        <div class="control">
+        <input class="input" type="text" id="email" required="required" maxlength="50">
+    </div>
+</div>
+    <div class="field">
+        <label for = "cpf" class="label">CPF:</label>
+        <div class="control">
+        <input type="text" id="cpf" required="required" maxlength="11" class="input">
+    </div>
+</div>
+<div class="field">
+        <label for = "cidade" class="label">Cidade:</label>
+        <div class="control">
+        <input type="text" id="cidade" required="required" maxlength="28" class="input">
+    </div>
+</div>
+    <div class="field">
+        <label for="estados-brasil" class="label"></label>Sou do Estado de:</label>
+        <div class="select">
+        <select name="estados-brasil" id="estados-brasil"></select>
+    </div>
+</div>
+<div class="field">
+    <label class="radio" for="apto">Apartamento</label>
+    <input type="radio" name="moradia" value="apto" id="apto">  
+    <label class="radio" for="casa">Casa</label>
+    <input type="radio" name="moradia" value="casa" id="casa">
+    </div>
+        <div class="field">
+            <label class="label" for="">Resumo curriculo</label>
+            <div class="control">
+            <textarea class="textarea" placeholder="Descreva aqui su última experiência profissional" name="curriculo" id="curriculo" maxlength="1000" required="required"></textarea>
+        </div>
+        </div>
+        <div class="field">
+            <label class="label" for="cargo">Cargo na empresa:</label>
+            <div class="control">
+            <input class="input" type="text" name="cargo" id="cargo" maxlength="40">
+        </div>
+        </div>
+        <div class="field">
+            <label class="label" for="descricao">Descrição da função:</label>
+            <div class="control">
+            <input class="input" type="text" name="descricao" id="descricao" maxlength="500">
+        </div>
+        </div>
+        <div class="field">
+            <label class="label" for="data">Data de início no cargo:</label>
+            <div class="control">
+            <input class="input" type="date" name="data" id="data" class="dataCargo" required="required">
+        </div>
+        </div>
+        <div class="field">
+            <div class="control">
+            <button class="button is-primary is-rounded" type="submit">Enviar informações</button>
+        </div>
+        </div>
+</form>
+</section>
+<script src="script.js"></script>
+</body>

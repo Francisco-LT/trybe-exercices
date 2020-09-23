@@ -1,0 +1,50 @@
+body {
+  font-size: large;
+  margin: 30px;
+}
+h1 {
+  font-size: medium;
+}
+h2 {
+
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    background-color: brown;
+    font-size: medium;
+    margin: 0px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 800px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  div figure {
+    max-width: 200px;
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  body {
+    background-color: whitesmoke;
+    font-size: large;
+    margin: 10px;
+    max-width: fit-content;
+  }
+}

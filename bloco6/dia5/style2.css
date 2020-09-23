@@ -1,0 +1,25 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: red;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    background-color: yellow;
+  }
+  
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    background-color: aqua;
+  }
+}

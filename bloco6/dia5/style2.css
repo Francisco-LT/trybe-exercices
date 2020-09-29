@@ -1,0 +1,57 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+header {
+  text-align: center;
+  font-size: larger;
+}
+header ul {
+  list-style: none;
+}
+
+.capitulos-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-content {
+  margin: 15px;
+  text-align: justify;
+}
+.main-content h1 {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: red;
+  }
+  .main-content {
+    margin: 0px;
+}
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    background-color: yellow;
+  }
+  
+  header p {
+    font-size: 30px;
+  }
+  
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    background-color: aqua;
+  }
+
+  header p {
+    font-size: 30px;
+  }
+  }

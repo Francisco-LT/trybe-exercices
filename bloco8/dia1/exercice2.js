@@ -67,7 +67,7 @@ function smallerName() {
   let nameBook;
   books.forEach((book) => {
     if (!nameBook || book.name.length < nameBook.length) {//com a variável vazia, o if (namebook) retorna false, assim o if (!namebook) retorna verdadeiro
-      nameBook = book.name;
+      nameBook = book.name; // em seguida pegamos o 
     }
   });
   return nameBook;

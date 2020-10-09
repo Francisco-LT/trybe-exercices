@@ -1,6 +1,6 @@
 const assert = require('assert')
 
-const sum = (...numbers) => {//...numbers armazena a quantidade de valores que colocarmos no console.log
+const sum = (...numbers) => {//o parÂmetro ...numbers armazena a quantidade de valores que colocarmos no console.log
   let total = 0;
   for (number of numbers) {
     total += number

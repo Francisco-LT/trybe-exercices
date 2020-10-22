@@ -4,6 +4,8 @@ const userFullName = ({ firstName, lastName }) => `Hello! My name is ${firstName
 const userNationality = ({ firstName, nationality }) => `${firstName} is ${nationality}`;
 
 const getUser = callback => {
+  // temos que na constante, criar uma funçã callback
+  // essa função será a que exeutaremos no teste
   const userToReturn = {
     firstName: "Ivan",
     lastName: "Ivanovich",

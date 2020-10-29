@@ -12,4 +12,3 @@ function myRemoveWithoutCopy(arr, item) {
 
 module.exports = myRemoveWithoutCopy;
 
-console.log(myRemoveWithoutCopy([1, 2, 35, 4], 35))

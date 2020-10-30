@@ -6,7 +6,7 @@ describe('Get the name of the user by the ID', () => {
   describe('see if we can find an user by ID', () => {
     it('finds the user name', () => {
       expect.assertions(1);
-    return (getUserName(4)).then(data => expect(data).toEqual('Mark'));
+    return (getUserName(4)).then(resolve => expect(resolve).toEqual('Mark'));
     })
   })
   

@@ -8,4 +8,4 @@ const getRepos = (url) => {
     });
 }
 
-console.log(getRepos())
+module.exports = getRepos;

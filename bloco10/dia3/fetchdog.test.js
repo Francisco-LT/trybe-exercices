@@ -20,3 +20,4 @@ describe('', () => {
     expect(fetchJoke).toHaveBeenCalledTimes(1)
   })
 });
+

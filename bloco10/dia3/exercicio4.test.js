@@ -1,4 +1,4 @@
-let {toUpperCase} = require('./exercicio4');
+/*let {toUpperCase} = require('./exercicio4');
 let {returnFistLetter} = require('./exercicio4');
 let {concatStrings} = require('./exercicio4');
 
@@ -31,4 +31,14 @@ describe('New implamantation for all functions', () => {
     expect(concatStrings).toHaveBeenCalledTimes(1);
     expect(concatStrings).toHaveBeenCalledWith('rosa ', 'lira ', 'de oliveira');
   })
-})
+})*/
+
+const factorial = (a) => {
+  let acc = 1;
+  for (let i = a; i > 1; i -= 1) {
+    acc = acc * i
+  }
+  return acc
+}
+
+console.log(factorial(5))

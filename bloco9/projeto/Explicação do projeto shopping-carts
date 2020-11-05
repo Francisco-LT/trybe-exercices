@@ -1,0 +1,75 @@
+- Shopping cart - exercício 1: Listagem de produtos -
+
+Você deve criar uma listagem de produtos que devem ser consultados através da API do Mercado Livre.
+Você deve utilizar o endpoint: "https://api.mercadolibre.com/sites/MLB/search?q=$QUERY"
+onde $QUERY deve ser o valor da sua busca. Para este trabalho, a busca deve ser o termo computador.
+O retorno desse endpoint será algo no formato json. Por exemplo, se for pesquisado "computador":
+A lista de produtos que devem ser exibidos é o array results no JSON acima.
+Você deve utilizar a função createProductItemElement(product) para criar os componentes HTML referentes a um produto.
+Adicione o elemento retornado da função createProductItemElement(product) como filho do elemento <section class="items">.
+Obs: as variáveis sku, no código fornecido, se referem aos campos id retornados pela API.
+
+O primeiro passo foi criar a função fetchProducts() que faz a requisição à API com o fetch
+Em seguida fazemos o json para transformar em um objeto JS o resultado da busca na API
+Depois é feito no resultado do passo anterior um forEach, que faz em todo o array de objetos gerado no json um appendChield mas com a função createProductItemElement(item)
+na função createProductItemElement temos que fazer um object distructing em seu parâmetro, mudando o nome das keys, para que puxe no array de objetos gerado no json, as keys que precisamos (id, tilte, thumbnail)
+com esses três items pegados na API, a função createProductItemElement usando outras fuinções, cria elementos dentro de uma section que retornam  a cara do site, mostrando o nome do produto, sua imagem e o botão para adicionar ao carrinho.
+
+- Exerciío 2: Adicione o produto ao carrinho de compras -
+
+Cada produto na página HTML possui um botão com o nome Adicionar ao carrinho!.
+Ao clicar nesse botão você deve realizar uma requisição para o endpoint: "https://api.mercadolibre.com/items/$ItemID"
+onde $ItemID deve ser o valor id do item selecionado.
+Quando colocado o id MLB1341706310 retorno desse endpoint será algo no formato:
+Preste atenção que o JSON deve conter apenas um item.
+Você deve utilizar a função createCartItemElement() para criar os componentes HTML referentes a um item do carrinho.
+Adicione o elemento retornado da função createCartItemElement(product) como filho do elemento <ol class="cart__items">.
+
+criamos a função fethItensOfCart que faz q requisição ao API, trata ela com o json e aplica a função addItensToCart
+addItensToCart primeiramente chama a classe cart__items que é a da ol, que abrigará as li que são o que está no carrinho de compra, em seguida cria-se uma variável que chama a função createCartItemElement(object), ela  cria uma li com algumas caracteristicas. Após essa li ser criada a func addItensTocart, faz o apendChield dela em cartItems.
+sectionOfItems: é uma função que busca a classe items, ue é onde ficout todos os produtos disponíveis para compra e colocamos um evento click nela, que dispara a função addItensToList. Essa função verifica se o item que disparou o evento tem a classe item__add (que é a do botão), caso ela tenha é criada uma variável que pega a função getSkuFromProductItem com o pai do evento de parâmetro. O pai do evento no caso é a section de class item. Essa função getSkuFromProductItem pega a class item, busca dentro dela a classe span.item__sku e pega seu inner text, que é justamente o ID. Feito isso esa função retorna para addItemstoeventlist, que por fim retorna fetchItensOfcart, com esse id de parâmetro, que faz com que ela façã a busca na api com esse id específico.
+
+- Exercício3: Remova o item do carrinho de compras ao clicar nele -
+
+Ao clicar no produto no carrinho de compra, ele deve ser removido da lista. Para isso, uma função (já existente) chamada cartItemClickListener(event) deve ser implementada com a lógica necessária para realizar a remoção.
+
+Na função createCartItemElement já passa um evento a variável li, que são as lis dos produtos que estão no carrinho de compra, a ela é adicionado um evento, em que quando clicamos, a função cartItemClickListener acontece. Essa função simplismente remove o conteúdo do item que gerou o evento. 
+
+- Exercício4: Carregue o carrinho de compras através do LocalStorage ao iniciar a página -
+
+Ao carregar a página, o estado atual do carrinho de compras deve ser carregado do LocalStorage. Para que isso funcione, o carrinho de compras deve ser salvo no LocalStorage, ou seja, todas as adições e remoções devem ser abordadas para que a lista atual seja salva.
+
+Primeiramente criei uma função saveItems, que faz um setItem, com a key cart(string) e value querySelector('.cart__items').innerHTML, que é o conteúdo do que está na ol. Chamamos essa função function cartItemClickListener(event) e fetchItensOfCart. Por fim, depois do window onload, chamamos a classe cart__items, que está na ol, e colocamos seu inner htm o que está salvo no storage. Ou seja, quando sairmos do site, ele volta com esse conteúdo para a OL. Fazemos isso através do localStorage.getItem em que pega-se o value chamando sua key.
+Por fim, colocamos um evento de click em todas as lis, que libera a função cartItemClickListener.
+
+- Exercício6: Botão para limpar carrinho de compras -
+
+Criamos uma função que chama empty-cart, colocamos um evento nela que ao ser clicada ela limpa todo o conteúdo  de cart__items que é o conteúdo da ol
+
+- Exercício7: Adicionar um texto de "loading" durante uma requisição à API -
+
+Uma requisição à API gasta um tempo e durante ele, ficamos sem saber se está tudo certo ou se algo deu errado. Normalmente é utilizada alguma forma para mostrar que a requisição está em andamento. Mostre a palavra "loading..." em alguma lugar da página apenas durante a requisição à API. O elemento mostrado durante o carregamento da página deve, obrigatóriamente, ter a classe loading.
+
+Depois do windowo onolad usamos a função settimeout que após um segundo libera a fetchProducts para iniciar todo o processo, antes disso fica com o loading... escrito na página, e quando o settimeout acaba esse loading é removido
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

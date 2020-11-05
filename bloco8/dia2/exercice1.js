@@ -78,5 +78,5 @@ function formatedBookNames() {
   })
   return names
 }
-
+console.log (formatedBookNames(books))
 assert.deepEqual(formatedBookNames(), expected_result);

@@ -15,8 +15,8 @@ function verifiedFetch(url) {
 function sendJokeToFriend(name) {
   const message = verifiedFetch('https://api.chucknorris.io/jokes/random?category=dev')
     .then((joke) => `Oi ${name}, ouve essa: ${joke}`)
+    .then((msg) => console.log(msg))
     .catch((err) => err);
-  console.log(message);
 }
 
 sendJokeToFriend("Anna")

@@ -1,4 +1,3 @@
-    
 const assert = require('assert');
 
 const books = [
@@ -64,16 +63,13 @@ const books = [
   },
 ];
 
+const expected_result = 43;
 
-function allNames() {
-  const authorNames = books.reduce ((acc, curr, index) => {
-    if (index < books.length -1) {
-      return `${acc} ${curr.author.name},` //o {acc} faz percorrer todo o aray
-    } else {
-      return `${acc} ${curr.author.name},`
-    }
-  }, 'Nomes: ', [])
-  return (authorNames)
+function averageAge() {
+  const ageOsAuthors = books.map(age => (age.releaseYear - age.author.birthYear))
+  const ageSum = ageOsAuthors.reduce((acc, age) => acc += age)
+  const averageOfAge = ageSum / books.length
+  return averageOfAge
 }
-  console.log(allNames(books))
-//assert.deepEqual(allNames(), "Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.");
+
+assert.equal(averageAge(), expected_result);

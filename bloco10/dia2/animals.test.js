@@ -36,6 +36,7 @@ describe('Testando promise - findAnimalByName', () => {
       expect.assertions(1);
       return getAnimal('Bob').catch(error =>
         expect(error).toEqual('Nenhum animal com esse nome!')
+        
       );
     });
   });

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PorqueEscolhiEsseTime from './porqueEscolhiEssetime'
 
 class Form extends React.Component {
   constructor(props) {
@@ -59,12 +59,7 @@ class Form extends React.Component {
       </select>
       </div>
       <div>
-      <label>Porque você torce para esse time?</label>
-      <textarea 
-      name="porqueEscolhiEsseTime"
-      value={this.state.porqueEscolhiEsseTime}
-      onChange={this.handleChange}>
-      </textarea>
+        <PorqueEscolhiEsseTime value={this.state.porqueEscolhiEsseTime} handleChange={this.handleChange}/>
       </div>
       <div>
         <input

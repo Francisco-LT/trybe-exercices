@@ -1,12 +1,3 @@
-export const login = (email, password) => ({
-  type: 'LOGIN_INPUT', 
-  email,
-  password,
- });
-
-export const register = (name, age, email) => ({
-  type: 'REGISTER_INPUT',
-  name,
-  age,
-  email,
- });
+// src/actions/index.js
+export const addRegister = value => ({ type: 'ADD_REGISTER', data: value });
+export const login = value => ({ type: 'LOGIN', value });

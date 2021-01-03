@@ -1,14 +1,15 @@
+// src/Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
   render() {
-    return(
+    return (
       <div>
-        <p>Bem vindo!!</p>
-        <Link to="/Login">Faça o login</Link>
+        Bem-vindo ao sistema de cadastramento!
+        <Link to="/Login">Faça seu Login</Link>
       </div>
-    )
+    );
   }
 }
 

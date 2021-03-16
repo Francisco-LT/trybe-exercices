@@ -1,0 +1,7 @@
+
+db.movies.find();
+
+db.movies.update(
+  { title: "Batman" },
+  { $addToSet: { category: "action"}}
+);

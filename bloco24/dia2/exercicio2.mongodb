@@ -1,0 +1,13 @@
+
+use('class');
+db.movies.find();
+
+db.movies.update(
+  { "title": "Batman" },
+  { $push: {
+    category: {
+      $each: ["villain", "comic-based"]
+    }
+  }
+  }
+);

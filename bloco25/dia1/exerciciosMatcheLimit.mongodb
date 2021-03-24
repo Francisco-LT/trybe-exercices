@@ -1,0 +1,40 @@
+db.artigos.aggregate(
+  [
+    { $limit : 5 }
+  ]
+);
+
+db.transactions.find();
+
+db.transactions.aggregate([
+  {
+    $match: {
+      from: 'Dave America',
+    },
+  },
+]);
+
+
+db.transactions.aggregate(
+  [
+    {
+      $match: {
+        $or: [
+          { value: { $gt: 700, $lt: 6000 } },
+          { to: { $eq:  "Lisa Simpson"} }
+        ]
+      }
+    }
+  ]
+);
+
+db.transactions.aggregate([
+  {
+    $match: {
+      value: { $gt: 1000 },
+    },
+  },
+  {
+    $limit: 3,
+  },
+]);

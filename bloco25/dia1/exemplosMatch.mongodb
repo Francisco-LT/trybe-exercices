@@ -1,0 +1,60 @@
+use('bancos');
+db.transactions.find();
+
+use('bancos');
+db.transactions.aggregate(
+  [{
+  $match: {
+    $and: [
+      { bank: "JPMoragan" },
+      { value: { $gte: 20000 }}
+    ]
+  }
+  }
+  ]
+);
+
+
+db.transactions.insertMany([
+  { value: 5900, from: "Dave America", to: "Ned Flanders", bank: 'International' },
+  { value: 1000, from: "Mark Zuck", to: "Edna Krabappel", bank: 'FloridaBank' },
+  { value: 209, from: "Lisa Simpson", to: "Dave America", bank: 'bankOfAmerica' },
+  { value: 10800, from: "Arnold Schuz", to: "Mark Zuck", bank: 'JPMorgan' },
+  { value: 850, from: "Barney Gumble", to: "Lisa Simpson", bank: 'Citigroup' },
+  { value: 76000, from: "Ned Flanders", to: "Edna Krabappel", bank: 'JPMorgan' },
+  { value: 1280, from: "Dave America", to: "Homer Simpson", bank: 'Citigroup' },
+  { value: 7000, from: "Arnold Schuz", to: "Ned Flanders", bank: 'International' },
+  { value: 59020, from: "Homer Simpson", to: "Lisa Simpson", bank: 'International' },
+  { value: 100, from: "Mark Zuck", to: "Barney Gumble", bank: 'floridaBank' },
+]);
+
+use('articles');
+
+db.artigos.insertMany([
+  { _id: ObjectId("512bc95fe835e68f199c8686"), author: "dave", score: 80, views: 100 },
+{ _id: ObjectId("512bc962e835e68f199c8687"), author: "dave", score: 85, views: 521 },
+{ _id: ObjectId("55f5a192d4bede9ac365b257"), author: "ahn", score: 60, views: 1000 },
+{ _id: ObjectId("55f5a192d4bede9ac365b258"), author: "li", score: 55, views: 5000 },
+{ _id: ObjectId("55f5a1d3d4bede9ac365b259"), author: "annT", score: 60, views: 50 },
+{ _id: ObjectId("55f5a1d3d4bede9ac365b25a"), author: "li", score: 94, views: 999 },
+{ _id: ObjectId("55f5a1d3d4bede9ac365b25b"), author: "ty", score: 95, views: 1000 }
+]);
+
+db.artigos.find();
+
+db.artigos.aggregate(
+  [{ $match : { author : "dave" } }]
+);
+
+db.artigos.aggregate(
+  [
+    {
+      $match: {
+        $or: [
+          { score: { $gt: 70, $lt: 90 } },
+          { views: { $gte: 1000 } }
+        ]
+      }
+    }
+  ]
+);

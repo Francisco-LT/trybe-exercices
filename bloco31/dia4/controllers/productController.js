@@ -4,7 +4,7 @@ const getAllProducts = (req, res) => {
   const products = ProductModel.getAll();
 
   res.status(200);
-  res.json(products);
+    res.json(products);
 };
 
 const getProductById = (req, res) => {
